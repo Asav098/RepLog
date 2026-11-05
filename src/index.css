@@ -1,0 +1,13 @@
+body{
+  background-color:rgba(0, 1, 29, 0.986);
+  color:aliceblue;
+}
+.exercise-row{
+  display:flex;
+  gap:20px;
+  border:1px solid cornsilk;
+  padding:20px;
+  align-items:center;
+  
+
+}
