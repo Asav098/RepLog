@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Exercises from './Exercises.jsx'
+import Session from './Session.jsx'
 function App() {
     const[history,setHistory] = useState([
       {
@@ -31,28 +32,7 @@ function App() {
   return (
     <>
     <ul>
-      {history.map(h=> (
-      
-      <li key={h.id}>
-        {h.name} {h.date} 
-        <ul> 
-          {h.exercises.map(he=>(
-        
-            <li key={he.id}>
-              {he.name} 
-              <ul> 
-                {he.sets.map((hee,i)=>(
-                  <li key={i}>
-                    weight: {hee.weight} - reps:{hee.reps} - completed: {hee.completed ? "Yes" : "No"}
-            </li>
-        
-        ))}
-        </ul>
-      </li>
-      ))}
-     </ul>
-     </li>
-      ))}
+      {history.map(h=> <Session key={h.id} session={h}/>)}
     </ul>
     
     <Exercises id={1} img={"src/assets/dumbellrows.png"} exercise="Dumbell Rows" />
