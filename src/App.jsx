@@ -29,8 +29,20 @@ function App() {
       
     ]);
 
+    function handleNewSession(){
+      const newSession ={
+          id:Date.now(),
+          name: "New Session",
+          date:"12-12-2025",
+          exercises:[]
+
+      };
+      setHistory(h=>[...h,newSession]);
+    }
+
   return (
     <>
+    <button onClick={handleNewSession}>Add Session</button>
     <ul>
       {history.map(h=> <Session key={h.id} session={h}/>)}
     </ul>
